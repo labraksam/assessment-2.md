@@ -1,0 +1,22 @@
+<%- include('../components/header.ejs'); %>
+  <%- include('../components/navigation.ejs'); %>
+
+<body>
+<h1>Mijn gegevens</h1>
+
+<article>
+<% if(session.cover) { %>
+  <img src="/upload/<%= session.cover %>">
+  <% } else { %>
+    <img src="/upload/placeholder.jpeg">
+    <% } %>
+
+      <p><%= session.firstName %> <%= session.lastName %></p>
+      <p><%= session.gender %></p>
+      <p><%= session.birthday %></p>
+
+      <button type="submit">Account verwijderen</button>
+    </article>
+</body>
+
+<%- include('../components/footer.ejs'); %>

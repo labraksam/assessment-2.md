@@ -1,0 +1,15 @@
+<%- include('../components/header.ejs'); %>
+  <%- include('../components/navigation.ejs'); %>
+
+    <h1>Profiel</h1>
+
+    <% if(currentUser.cover) { %>
+      <img src="/upload/<%= currentUser.cover %>">
+      <% } else { %>
+        <img src="/upload/placeholder.jpeg">
+        <% } %>
+          <p><%= currentUser.firstName %><%= currentUser.lastName %></p>
+          <p><%= currentUser.gender %></p>
+          <p><%= currentUser.birthday %></p>
+
+          <%- include('../components/footer.ejs'); %>

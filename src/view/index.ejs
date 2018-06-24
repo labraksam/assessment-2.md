@@ -1,0 +1,29 @@
+<%- include('components/header.ejs'); %>
+  <%- include('components/navigation.ejs'); %>
+
+    <body>
+      <div id="article">
+        <% if (session) { %>
+          <p>Je bent al ingelogd</p>
+          <% } else { %>
+            <form action="/doLogin" method="post" id="inloggen">
+              <img src="images/highway.jpg" alt="road">
+              <h1>Welkom bij RelationshipGoals</h1>
+              <p>Kom in contact met iemand met dezelfde levensdoelen!</p>
+              <div>
+                <label>Gebruikersnaam (Email)<input type="text" name="username" placeholder=""></label>
+              </div>
+              <div>
+                <label>Wachtwoord<input type="password" name="password" placeholder=""></label>
+              </div>
+              <button type="submit">Inloggen</button>
+              <p>Nog geen account? <a href="signup">Maak hier een account aan.</a></p>
+            </form>
+            <% } %>
+      </div>
+
+
+    </body>
+
+
+    <%- include('components/footer.ejs'); %>

@@ -1,0 +1,33 @@
+<%- include('../components/header.ejs'); %>
+  <%- include('../components/navigation.ejs'); %>
+
+<h1>Matches</h1>
+
+<p>Dit zijn jouw huidige matches, <%= session.firstName %>.</p>
+
+<% if (session) { %>
+
+<% users.forEach(function (user) { %>
+  <% if (session.gender === user.gender_pref && session.gender_pref === user.gender) { %>
+    <% if (session.age_pref_min <= user.birthday && session.age_pref_max >= user.birthday) { %>
+      <% if (user.age_pref_min <= session.birthday && user.age_pref_max >= session.birthday) { %>
+        <a href="profile/<%= user._id %>">
+        <article>
+        <% if(user.cover) { %>
+        <img src="/upload/<%= user.cover %>">
+      <% } else { %>
+        <img src="images/placeholder.jpeg">
+      <% } %>
+          <p>Naam <%= user.firstName %> <%= user.lastName %></p>
+          <p>Geslacht <%= user.gender %></p>
+          <p>Leeftijd <%= user.birthday %></p>
+        </article>
+        </a>
+        <% } %>
+    <% } %>
+<% } %>
+<% }) %>
+
+<% } %>
+
+<%- include('../components/footer.ejs'); %>

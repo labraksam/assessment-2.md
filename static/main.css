@@ -1,0 +1,203 @@
+body {
+  font-family: Segoe UI, Myriad, Verdana, sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #333;
+  font-size: 2em;
+  font-weight: normal;
+}
+
+h2 {
+  font-weight: normal;
+}
+
+button {
+  background-color: #333;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  color: white;
+  padding: .5em 1.5em;
+  border-radius: .3em;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #F7F7F7;
+  color: #333;
+  text-decoration: none;
+}
+
+header {
+  box-shadow: 0 0.125rem 0 0 rgba(7, 7, 33, .15);
+  background-color: #333;
+  min-height: 3.75rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+nav img {
+  height: 1.5em;
+}
+
+nav>ul {
+  list-style-type: none;
+}
+
+header>nav>a>img {
+  display: inline-block;
+  position: relative;
+  top: 1em;
+  left: .8em;
+  border: none;
+  height: 2em;
+}
+
+header>nav>ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: auto;
+  margin: -1em;
+  margin-bottom: 1em;
+  margin-right: .1em;
+  padding: 0 1rem 0 1rem;
+}
+
+header>nav>ul>li>a {
+  color: white;
+  margin-left: 1em;
+  text-decoration: none;
+}
+
+article {
+  display: block;
+}
+
+article {
+  text-decoration: none;
+}
+
+fieldset {
+  border: 0;
+  margin: -.8em;
+}
+
+legend {
+  font-size: 1.5em;
+  margin-left: -.1em;
+}
+
+#formulier {
+  margin: .5em;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5em;
+  width: 80%;
+}
+
+#formulier > div > p:first-of-type {
+  margin-bottom: 5em;
+}
+
+
+#inloggen {
+  margin: .5em;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5em;
+  width: 80%;
+}
+
+#inloggen > p:first-of-type {
+  margin-bottom: 5em;
+}
+
+
+#inloggen > div {
+  margin-top: 2em;
+}
+
+#inloggen > img {
+  max-width: 80%;
+}
+
+input {
+  border: 0em;
+  display: block;
+  height: 2.8125em;
+  font-family: Segoe UI, Myriad, Verdana;
+  width: 20em;
+  max-width: auto;
+  font-size: 1em;
+  min-height: 1.875em;
+  box-sizing: border-box;
+  line-height: 1.5625em;
+  z-index: 2;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid #333;
+  color: grey;
+}
+
+form > fieldset > div:last-child > input {
+  border: 0;
+  border-bottem: none;
+}
+
+label {
+  color: #333;
+  font-size: 1.1em;
+}
+
+form>fieldset>div {
+  margin-top: 2em;
+}
+
+
+form {
+  max-width: center;
+  padding-top: 5em;
+}
+
+footer {
+  text-align: center;
+  background: #333;
+  color: white;
+  padding: 5em;
+}
+
+img {
+  max-height: 15em;
+  border-radius: .3em;
+}
+
+article {
+  margin: .5em;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5em;
+  width: 80%;
+}
+
+a > article > p {
+  text-decoration: none;
+}
+
+#bold {
+  font-weigt: bold;
+}

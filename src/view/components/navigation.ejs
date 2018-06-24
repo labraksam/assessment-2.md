@@ -1,0 +1,19 @@
+<header>
+    <nav>
+        <a href="/"><img class="logo" src="../images/RGlogo.svg" alt="RGlogo">
+        </a>
+        <% if(session) { %>
+          <ul>
+              <li><a href="dashboard">Dashboard</a></li>
+              <li><a href="myprofile">Mijn profiel</a></li>
+              <li><a href="logout">Uitloggen</a></li>
+          </ul>
+        <% } else { %>
+          <ul>
+              <li><a href="/">Login</a></li>
+              <li><a href="signup">Registreren</a></li>
+          </ul>
+        <% } %>
+    </nav>
+
+</header>

@@ -1,0 +1,103 @@
+<%- include('../components/header.ejs'); %>
+
+  <body>
+    <%- include('../components/navigation.ejs'); %>
+
+      <form action="/signup" method="post" enctype=multipart/form-data id="formulier">
+
+        <div>
+          <h1>Account aanmaken</h1>
+        </div>
+        <div>
+          <p>Vul de volgende gegevens in om uw RelationshipGoals account aan te maken</p>
+        </div>
+
+
+        <fieldset>
+          <legend>Personalia</legend>
+
+          <div>
+            <label for="firstname">
+      Voornaam
+    </label>
+            <input name='firstName' type="text" id="firstname">
+          </div>
+
+          <div>
+            <label for="lastname">
+      Achternaam
+    </label>
+            <input name='lastName' type="text" id="lastname">
+          </div>
+
+
+          <div>
+            <label for="email">
+        Email (is tevens je gebruikersnaam)
+      </label>
+            <input name='email' type="text" id="email" placeholder="abcdefg@gmail.com">
+          </div>
+
+          <div>
+            <label for="password1">
+      Wachtwoord
+        </label>
+            <input name='password' type='password' id="password1" placeholder="min. 6 tekens">
+          </div>
+
+          <div>
+            <label for="password2">
+      Wachtwoord herhalen
+        </label>
+            <input name='password_again' type='password' id="password2" placeholder="min. 6 tekens">
+          </div>
+
+
+          <div>
+            <label>Ik ben een:</label>
+            <label for="vrouw1">Vrouw</label>
+            <input type="radio" name="gender" value="female" id="vrouw1" checked required>
+          </div>
+          <div>
+            <label for="man1">Man</label>
+            <input type="radio" name="gender" value="male" id="man1" required>
+          </div>
+
+          <div>
+            <label>Ik val op:</label>
+            <label for="vrouw2">Vrouw</label>
+            <input type="radio" name="gender_pref" value="female" id="vrouw2" checked required>
+          </div>
+          <div>
+            <label for="man2">Man</label>
+            <input type="radio" name="gender_pref" value="male" id="man2" required>
+          </div>
+
+          <div>
+            <label for="birthday">Mijn leeftijd is</label>
+            <input type="number" name="birthday" min="18" required>
+          </div>
+
+          <div>
+            <label for="age-pref">Ik ben opzoek naar iemand tussen de</label>
+            <input type="number" name="age_pref_min" placeholder="min. 18 jaar" min="18" required>
+          </div>
+          <div>
+            <label for="age-pref">en</label>
+            <input type="number" name="age_pref_max" placeholder="max. 99 jaar" max="99" requierd>
+          </div>
+
+          <div>
+            <label>Kies een profielfoto</label>
+            <input name="cover" type="file" accept="image/*">
+          </div>
+
+        </fieldset>
+
+        <button type="submit">Account aanmaken</button>
+      </form>
+
+
+  </body>
+
+  <%- include('../components/footer.ejs'); %>
