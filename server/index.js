@@ -45,7 +45,9 @@ var app = express()
   .get('/dashboard', dashboard)
   .get('/logout', logout)
   .get('/myprofile', myprofile)
+  .delete('/:id', remove)
   .get('*', notFound)
+
 
   .listen(8080)
 
@@ -270,22 +272,11 @@ function myprofile(req, res) {
 }
 
 function remove(req, res) {
-    var remove = document.getElementById('js-remove')
+  var id = req.params.id
 
-        if (remove) {
-        remove.addEventListener('click', onremove)
-        }
+  data = data.filter(function (value) {
+    return user.id !== id
+  })
 
-
-    function remove(req, res) {
-    var id = req.params.id
-
-    data = data.filter(function(value) {
-    return value.id !== id
-    })
-
-    res.json({
-    status: 'ok'
-    })
-  }
+  res.json({status: 'ok'})
 }
