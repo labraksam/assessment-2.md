@@ -19,7 +19,9 @@ mongo.MongoClient.connect(url, function(err, client) {
   db = client.db(process.env.DB_NAME)
 })
 
-var upload = multer({dest: 'static/upload/'})
+var upload = multer({
+  dest: 'static/upload/'
+})
 
 var app = express()
   .set('view engine', 'ejs')
@@ -34,7 +36,7 @@ var app = express()
     secret: process.env.SESSION_SECRET
   }))
 
-  app.use('/images', express.static('src/images'))
+app.use('/images', express.static('src/images'))
 
   .get('/', home)
   .get('/login', login)
@@ -106,10 +108,10 @@ function doLogin(req, res) {
   var dbUsers = db.collection('users')
 
   dbUsers.findOne({
-      email: username
-    }, function(err, user) {
-      if (err) {
-        console.log(err)
+    email: username
+  }, function(err, user) {
+    if (err) {
+      console.log(err)
     } else {
       try {
         argon2.verify(user.password, password)
@@ -189,8 +191,9 @@ function doSignup(req, res) {
     // De input gebruikersnaam zoeken
     username: currentUser
   }, function(err, user) {
-    if (err) { console.log(err) }
-    else {
+    if (err) {
+      console.log(err)
+    } else {
       argon2.hash(password).then(onhash)
     }
   })
@@ -222,7 +225,7 @@ function doSignup(req, res) {
 }
 
 function logout(req, res) {
-  req.session.destroy(function (err) {
+  req.session.destroy(function(err) {
     if (err) {
       next(err)
     } else {
@@ -241,9 +244,11 @@ function singleProfile(req, res) {
     console.log('render vanaf sessie')
     var mongoID = new mongo.ObjectID(req.params.id)
     db.collection('users').findOne({
-      _id: mongoID}, function(err, user) {
-      if (err) { console.log(err) }
-      else {
+      _id: mongoID
+    }, function(err, user) {
+      if (err) {
+        console.log(err)
+      } else {
         data.currentUser = user
         res.render('dashboard/profile.ejs', data)
       }
@@ -265,7 +270,7 @@ function notFound(req, res) {
 
 function myprofile(req, res) {
   var data = {
-  session: req.session.user,
+    session: req.session.user,
   }
 
   res.render('dashboard/myprofile.ejs', data)
@@ -274,9 +279,11 @@ function myprofile(req, res) {
 function remove(req, res) {
   var id = req.params.id
 
-  data = data.filter(function (value) {
+  data = data.filter(function(value) {
     return user.id !== id
   })
 
-  res.json({status: 'ok'})
+  res.json({
+    status: 'ok'
+  })
 }
